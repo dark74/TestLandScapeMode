@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -43,6 +44,7 @@ public class AddAlertWindowService extends Service {
             }
             CustomLayout customLayout = new CustomLayout(orientation);
             virtualDisplayWindowManager.addView(mView, customLayout);
+            Toast.makeText(this, "添加Window成功", Toast.LENGTH_SHORT).show();
         } else {
             Log.d(TAG, "not find virtual display");
         }
